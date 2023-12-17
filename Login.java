@@ -18,7 +18,7 @@ public class Login extends JFrame {
     public Login() throws FontFormatException {
         try {
             // Thêm hình ảnh làm nền cho giao diện
-            Image backgroundImage = ImageIO.read(new File("javapacman-master/img/12345.jpg"));
+            Image backgroundImage = ImageIO.read(new File("images\\12345.jpg"));
             setContentPane(new JLabel(new ImageIcon(backgroundImage)));
             setSize(backgroundImage.getWidth(null), backgroundImage.getHeight(null));
         } catch (IOException e) {
@@ -44,7 +44,7 @@ public class Login extends JFrame {
         loginButton.setBackground(Color.WHITE);
         loginButton.setForeground(Color.BLACK);
 
-        try(InputStream is = new BufferedInputStream(Files.newInputStream(Paths.get("javapacman-master/Silkscreen/Silkscreen-Regular.ttf")))) {
+        try(InputStream is = new BufferedInputStream(Files.newInputStream(Paths.get("Silkscreen\\Silkscreen-Regular.ttf")))) {
             Font font = Font.createFont(Font.TRUETYPE_FONT, is);
             usernameLabel.setFont(font.deriveFont(Font.BOLD, 18));
             usernameField.setFont(font.deriveFont(Font.BOLD, 14));
