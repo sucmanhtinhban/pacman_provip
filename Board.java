@@ -5,7 +5,6 @@ import java.lang.Math;
 import java.util.*;
 import java.io.*;
 
-
 /* Both Player and Ghost inherit Mover.  Has generic functions relevant to both*/
 class Mover
 {

@@ -1,7 +1,6 @@
 import java.net.URL;
 import javax.sound.sampled.*;   //sampled.Clip
 
-
 /* This class controls all sound effects*/
 public class GameSound{
     
