@@ -1,5 +1,9 @@
 import java.net.URL;
-import javax.sound.sampled.*;   //sampled.Clip
+
+//sampled.Clip
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /* This class controls all sound effects*/
 public class GameSound{
@@ -8,9 +12,10 @@ public class GameSound{
     Clip newGame;
     Clip death;
 
+
     /* Keeps track of whether or not the eating sound is playing*/
     boolean stopped;
-       
+    
 
 /* Initialize audio files */ 
     public GameSound(){

@@ -8,7 +8,7 @@ import java.lang.*;
 /* This class contains the entire game... most of the game logic is in the Board class but this
    creates the gui and captures mouse and keyboard input, as well as controls the game states */
 public class Pacman extends JApplet implements MouseListener, KeyListener
-{ 
+{
   
   /* These timers are used to kill title, game over, and victory screens after a set idle period (5 seconds)*/
   long titleTimer = -1;

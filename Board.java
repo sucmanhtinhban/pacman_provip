@@ -1,9 +1,17 @@
 /* Drew Schuster */
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
 import javax.swing.JPanel;
-import java.lang.Math;
-import java.util.*;
-import java.io.*;
+
 
 /* Both Player and Ghost inherit Mover.  Has generic functions relevant to both*/
 class Mover
@@ -59,7 +67,7 @@ class Mover
       return true;
     }
     return false;
-  } 
+  }
 }
 
 /* This is the pacman object */
@@ -590,6 +598,7 @@ public class Board extends JPanel
   }
 
   /* Reads the high scores file and saves it */
+  String Username;
   public void initHighScores()
   {
     File file = new File("highScores.txt");
@@ -597,6 +606,7 @@ public class Board extends JPanel
     try
     {
         sc = new Scanner(file);
+        Username = sc.nextLine();
         highScore = sc.nextInt();
         sc.close();
     }
@@ -608,11 +618,12 @@ public class Board extends JPanel
   /* Writes the new high score to a file and sets flag to update it on screen */
   public void updateScore(int score)
   {
-    PrintWriter out;
+    FileWriter out;
     try
     {
-      out = new PrintWriter("highScores.txt");
-      out.println(score);
+      out = new FileWriter("highScores.txt");
+      out.write(Username+"\n");
+      out.write(Integer.toString (score));
       out.close();
     }
     catch(Exception e)
@@ -625,11 +636,12 @@ public class Board extends JPanel
   /* Wipes the high scores file and sets flag to update it on screen */
   public void clearHighScores()
   {
-    PrintWriter out;
+    FileWriter out;
     try
     {
-      out = new PrintWriter("highScores.txt");
-      out.println("0");
+      out = new FileWriter("highScores.txt");
+      out.write(Username+"\n");
+      out.write("0");
       out.close();
     }
     catch(Exception e)
