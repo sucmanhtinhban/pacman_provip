@@ -102,7 +102,6 @@ class Player extends Mover
   /* Constructor places pacman in initial location and orientation */
   public Player(int x, int y)
   {
-
     teleport=false;
     pelletsEaten=0;
     pelletX = x/gridSize-1;
