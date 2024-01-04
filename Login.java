@@ -7,9 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.BufferedInputStream;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -38,8 +36,8 @@ public class Login extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        setTitle("Đăng nhập");
+//Set Title
+        setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -122,20 +120,6 @@ private void performLogin() {
         dispose();
     }
 }
-
-    public static boolean addUsernameToFile(String Username) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("highScores.txt", true))) {
-            // Append the new username to the end of the file
-            writer.write(Username);
-            writer.newLine();
-            writer.close();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
     private void openGame() {
         /* Main function simply creates a new pacman instance*/
         Pacman c = new Pacman();
